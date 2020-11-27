@@ -1,0 +1,36 @@
+- model: question.Question
+  pk: 1
+  fields:
+    question: "１＋２＝３"
+    answer: true
+    comment: "正解は〇"
+- model: question.Question
+  pk: 2
+  fields:
+    question: "５－３＝３"
+    answer: false
+    comment: "正解は×"
+- model: question.Question
+  pk: 3
+  fields:
+    question: "２×４＝６"
+    answer: false
+    comment: "正解は×"
+- model: question.Question
+  pk: 4
+  fields:
+    question: "９÷３＝３"
+    answer: true
+    comment: "正解は〇"
+- model: question.Question
+  pk: 5
+  fields:
+    question: "４+３＝７"
+    answer: true
+    comment: "正解は〇"
+- model: question.Question
+  pk: 6
+  fields:
+    question: "８－２＝５"
+    answer: false
+    comment: "正解は×"

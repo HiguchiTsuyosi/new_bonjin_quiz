@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<h1>ようこそ<br>{{user.username}}さん</h1>
+<br><br>
+<div class="container">
+<div class="container-fluid">
+<div class="row">
+  <div class="col-md">
+    <div class="card" style="width: 15rem;">
+      <img class="card-img-top" src="{% static 'assets/img/ranking.png' %}" alt="Card image cap">
+      <div class="card-body"  align="center">
+        <h4 class="card-title">ランキング</h4>
+        <p class="card-text">クイズに関するランキングを確認することができます</p>
+        <a href="{% url 'ranking' %}" class="btn btn-primary">ランキング</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md">
+      <div class="card" style="width: 15rem;">
+          <img class="card-img-top" src="{% static 'assets/img/quiz.png' %}" alt="Card image cap">
+          <div class="card-body"  align="center">
+            <h4 class="card-title">クイズ</h4>
+            <p class="card-text">全5問の水溜りボンドに関するクイズに挑戦することができます。</p>
+            <a href="{% url 'level_choice' %}" class="btn btn-primary">挑戦する</a>
+          </div>
+        </div>
+      </div>
+
+
+  <div class="col-md">
+      <div class="card" style="width: 15rem;">
+          <img class="card-img-top" src="{% static 'assets/img/data.png' %}" alt="Card image cap">
+          <div class="card-body"  align="center">
+            <h4 class="card-title">情報</h4>
+            <p class="card-text">クイズの最高得点などのアカウントの情報を見ることができます</p>
+            <a href="{% url 'userdata' %}" class="btn btn-primary">アカウント情報</a>
+          </div>
+      </div>
+    </div>
+
+</div>
+
+</div>
+</div>
+
+{% endblock content %}

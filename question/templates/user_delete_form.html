@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% block title %}クイズ削除{% endblock title %}
+
+
+{% block content %}
+
+<h3>削除したいユーザーIDを入力してください</h3>
+<br>
+
+{% if error %}
+<p>入力エラーが発生しました</p>
+{% endif %}
+
+
+<form action="../user_delete_success/" method="POST">
+{% csrf_token %}
+<p>ユーザーID：{{ form.id }}</p>
+<button type="submit" class="btn btn-primary">削除</button>
+</form>
+<p></p>
+<br>
+<table border="1">
+    <tr>
+        <td colspan="8" align="center">
+            現在のユーザーテーブル
+        </td>
+    </tr>
+    <tr>
+        <td align="center">
+            ユーザーID
+        </td>
+        <td align="center">
+            ユーザー名
+        </td>
+        <td align="center">
+            メールアドレス
+        </td>
+        <td align="center">
+            最高点（かんたん）
+        </td>
+        <td align="center">
+            最高点（ふつう）
+        </td>
+        <td align="center">
+            最高点（むずかしい）
+        </td>
+        <td align="center">
+            登録日
+        </td>
+        <td align="center">
+            最終ログイン
+        </td>
+    </tr>
+    {% for i in users %}
+    <tr>
+        <td align="center">
+            {{ i.id }}
+        </td>
+        <td align="center">
+            {{ i.username }}
+        </td>
+        <td align="center">
+            {{ i.email }}
+        </td>
+        <td align="center">
+            {{ i.easy_point }}
+        </td>
+        <td align="center">
+            {{ i.normal_point }}
+        </td>
+        <td align="center">
+            {{ i.hard_point }}
+        </td>
+        <td align="center">
+            {{ i.date_joined }}
+        </td>
+        <td align="center">
+            {{ i.last_login }}
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock content %}

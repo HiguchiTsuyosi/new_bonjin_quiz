@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %}処理成功{% endblock title %}
+
+
+{% block content %}
+
+<h3>以下の内容の追加または更新に成功しました。</h3>
+<p></p>
+<p></p>
+<table border="1">
+    <tr>
+        <td align="center">
+            問題番号
+        </td>
+        <td align="center">
+            問題文
+        </td>
+        <td align="center">
+            答え
+        </td>
+        <td align="center">
+            解説
+        </td>
+    </tr>
+    <tr>
+        <td align="center">
+            {{ form.cleaned_data.id }}
+        </td>
+        <td>
+            {{ form.cleaned_data.question }}
+        </td>
+        <td align="center">
+            {% if form.cleaned_data.answer %}
+            〇
+            {% else %}
+            ×
+            {% endif %}
+        </td>
+        <td align="center">
+            {{ form.cleaned_data.comment }}
+        </td>
+    </tr>
+</table>
+<p></p>
+<p></p>
+<p><a href="{% url 'question_form' %}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">クイズの追加・更新</a></p>
+
+{% endblock content %}

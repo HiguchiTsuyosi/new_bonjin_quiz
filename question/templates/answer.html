@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}水溜りボンドクイズ：第{{ answer.id }}問目{% endblock title %}
+
+
+{% block content %}
+
+
+第{{answer.id}}問<br>
+{{answer.comment}}<br>
+
+{% if flg == 1 %}
+
+<a href="{% url 'result' %}" class="btn btn-primary">結果画面へ</a>
+
+{% else %}
+
+<a href="{% url 'question' %}" class="btn btn-primary">次の問題</a>
+<a href="{% url 'question' %}" class="btn btn-primary">中断</a>
+
+{% endif %}
+
+<p>現在の正解数：{{ans_num}}問</p>
+
+{% endblock content %}

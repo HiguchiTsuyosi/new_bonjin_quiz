@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block title %}水溜りボンドクイズトップ{% endblock title %}
+
+{% block content %}
+
+
+
+<div class="card" style="width: 80%">
+    <div class="card-body">
+      <h1 class="card-title">水溜りボンドクイズへようこそ！</h1>
+      <p class="card-text"><br>
+        <h4>ここでは水溜りボンドについての知識が試せるクイズにチャレンジすることができます。<br>
+            また、ログインすることで日本中の人とランキングで競うこともできます！</h4>
+      </p>
+    </div>
+  </div>
+  <br>
+<div class="accordion" id="accordionExample">
+    <div class="card">
+      <div class="card-header" id="headingOne">
+        <h5 class="mb-0">
+          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+            アカウントをお持ちの方
+          </button>
+        </h5>
+      </div>
+  
+      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+        <div class="card-body">
+          ログインしてランキング上位を目指しましょう！<br><br>
+          <a href="{% url 'loginview' %}" class="btn btn-primary">ログイン</a>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" id="headingTwo">
+        <h5 class="mb-0">
+          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            アカウントを作成される方
+          </button>
+        </h5>
+      </div>
+      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+        <div class="card-body">
+          アカウントを作成してログインすることでランキングや自己ベストなどを利用することができるようになります。<br><br>
+          <a href="{% url 'signup' %}" class="btn btn-primary">新規登録</a>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" id="headingThree">
+        <h5 class="mb-0">
+          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            ゲストでログイン
+          </button>
+        </h5>
+      </div>
+      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+        <div class="card-body">
+          ランキングや自己ベストなどは利用できませんが、お試しでクイズに挑戦することができます。<br><br>
+          <a href="{% url 'home' %}" class="btn btn-primary">ゲストでログイン</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock content %}

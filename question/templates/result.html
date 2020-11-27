@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}水溜りボンドクイズ：リザルト{% endblock title %}
+
+
+{% block content %}
+
+{% if flg %}
+記録を更新しました！
+{% endif %}
+
+{{answer.id}}<br>
+{{answer.comment}}<br>
+
+<a href="{% url 'home' %}" class="btn btn-primary">ホームへ</a>
+
+<p>あなたの正解数：{{ans_num}}問</p>
+
+{% endblock content %}

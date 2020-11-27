@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}データベース管理{% endblock title %}
+
+
+{% block content %}
+
+<p><h3>ユーザー：admin　だけがデータ管理を行えます。</h3></p>
+<br>
+<p><a href="{% url 'question_form' %}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">クイズの追加・更新</a></p>
+<br>
+<p><a href="{% url 'question_delete_form' %}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">クイズの削除</a></p>
+<br>
+<p><a href="{% url 'user_delete_form' %}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">ユーザーの削除</a></p>
+
+{% endblock content %}

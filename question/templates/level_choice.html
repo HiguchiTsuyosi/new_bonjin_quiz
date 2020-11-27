@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}難易度選択{% endblock title %}
+
+
+{% block content %}
+
+            
+<a href="{% url 'quiz_start' 1 %}" class="btn btn-primary">かんたん</a>
+<p>ハイスコア：{{ userdata.easy_point }}</p>
+<a href="{% url 'quiz_start' 2 %}" class="btn btn-primary">ふつう</a>
+<p>ハイスコア：{{ userdata.normal_point }}</p>
+<a href="{% url 'quiz_start' 3 %}" class="btn btn-primary">むずかしい</a>
+<p>ハイスコア：{{ userdata.hard_point }}</p>
+
+
+
+{% endblock content %}

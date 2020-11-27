@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block title %}クイズ削除{% endblock title %}
+
+
+{% block content %}
+
+<h3>削除したい問題番号を入力してください</h3>
+<br>
+
+{% if error %}
+<p>入力エラーが発生しました</p>
+{% endif %}
+
+
+<form action="../delete_success/" method="POST">
+{% csrf_token %}
+<p>問題番号：{{ form.id }}</p>
+<button type="submit" class="btn btn-primary">削除</button>
+</form>
+<p></p>
+<br>
+<table border="1">
+    <tr>
+        <td colspan="4" align="center">
+            現在のクイズテーブル
+        </td>
+    </tr>
+    <tr>
+        <td align="center">
+            問題番号
+        </td>
+        <td align="center">
+            問題文
+        </td>
+        <td align="center">
+            答え
+        </td>
+        <td align="center">
+            解説
+        </td>
+    </tr>
+    {% for i in questions %}
+    <tr>
+        <td align="center">
+            {{ i.id }}
+        </td>
+        <td align="center">
+            {{ i.question }}
+        </td>
+        <td align="center">
+            {% if i.answer %}
+            〇
+            {% else %}
+            ×
+            {% endif %}
+        </td>
+        <td align="center">
+            {{ i.comment }}
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock content %}

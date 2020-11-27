@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}水溜りボンドクイズ：第{{ question.id }}問目{% endblock title %}
+
+{% block content %}
+<table border="1" width="100%" height="200">
+    <tr>
+        <td vertical-align="middle" align="center">
+            第{{question.id}}問<br>
+            {{question.question}}<br>
+            
+            
+                <a href="{% url 'answer' 1 %}" class="btn btn-primary">〇</a>
+                <a href="{% url 'answer' 0 %}" class="btn btn-primary">×</a>
+                
+                <p>現在の正解数：{{ans_num}}問</p>
+        </td>
+    </tr>
+</table>
+
+
+{% endblock content %}

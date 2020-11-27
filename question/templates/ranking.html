@@ -1,0 +1,138 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md">
+            <table border="1">
+                <tr>
+                    <td colspan="4" align="center">
+                        かんたん
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        順位
+                    </td>
+                    <td>
+                        ユーザーネーム
+                    </td>
+                    <td>
+                        ハイスコア
+                    </td>
+                    <td>
+                        ユーザーID
+                    </td>
+                </tr>
+                {% for user in alluser_easy %}
+                <tr>
+                    <td align="center">
+                        {{ forloop.counter }}
+                    </td>
+                    <td>
+                        {{ user.username }}
+                    </td>
+                    <td align="center">
+                        {{ user.easy_point }}点
+                    </td>
+                    <td align="center">
+                        {{ user.id }}
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+        <div class="col-md">
+            <table border="1">
+                <tr>
+                    <td colspan="4" align="center">
+                        ふつう
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        順位
+                    </td>
+                    <td>
+                        ユーザーネーム
+                    </td>
+                    <td>
+                        ハイスコア
+                    </td>
+                    <td>
+                        ユーザーID
+                    </td>
+                </tr>
+            
+                {% for user in alluser_normal %}
+                <tr>
+                    <td align="center">
+                        {{ forloop.counter }}
+                    </td>
+                    <td>
+                        {{ user.username }}
+                    </td>
+                    <td align="center">
+                        {{ user.normal_point }}点
+                    </td>
+                    <td align="center">
+                        {{ user.id }}
+                    </td>
+                </tr>
+                {% ifequal user.easy_point user.forloop.counter.easy_point %}
+                {{ forloop|add:"1" }}
+                {% endifequal %}
+                {% endfor %}
+            </table>
+        </div>
+
+        <div class="col-md">
+            <table border="1">
+                <tr>
+                    <td colspan="4" align="center">
+                        むずかしい
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        順位
+                    </td>
+                    <td>
+                        ユーザーネーム
+                    </td>
+                    <td>
+                        ハイスコア
+                    </td>
+                    <td>
+                        ユーザーID
+                    </td>
+                </tr>
+            
+                {% for user in alluser_hard %}
+                <tr>
+                    <td align="center">
+                        {{ forloop.counter }}
+                    </td>
+                    <td>
+                        {{ user.username }}
+                    </td>
+                    <td align="center">
+                        {{ user.hard_point }}点
+                    </td>
+                    <td align="center">
+                        {{ user.id }}
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
+</div>
+
+
+{% endblock content %}

@@ -1,0 +1,36 @@
+- model: question.Question_normal
+  pk: 1
+  fields:
+    question: "１０＋２０＝３０"
+    answer: true
+    comment: "正解は〇"
+- model: question.Question_normal
+  pk: 2
+  fields:
+    question: "５０－３０＝３０"
+    answer: false
+    comment: "正解は×"
+- model: question.Question_normal
+  pk: 3
+  fields:
+    question: "２０×４０＝６０"
+    answer: false
+    comment: "正解は×"
+- model: question.Question_normal
+  pk: 4
+  fields:
+    question: "９０÷３０＝３０"
+    answer: true
+    comment: "正解は〇"
+- model: question.Question_normal
+  pk: 5
+  fields:
+    question: "４０+３０＝７０"
+    answer: true
+    comment: "正解は〇"
+- model: question.Question_normal
+  pk: 6
+  fields:
+    question: "８０－２０＝５０"
+    answer: false
+    comment: "正解は×"

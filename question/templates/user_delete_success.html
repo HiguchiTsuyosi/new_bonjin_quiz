@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block title %}削除成功{% endblock title %}
+
+
+{% block content %}
+
+<h3>以下の内容の削除に成功しました。</h3>
+<br>
+<table border="1">
+    <tr>
+        <td colspan="8" align="center">
+            現在のユーザーテーブル
+        </td>
+    </tr>
+    <tr>
+        <td align="center">
+            ユーザーID
+        </td>
+        <td align="center">
+            ユーザー名
+        </td>
+        <td align="center">
+            メールアドレス
+        </td>
+        <td align="center">
+            最高点（かんたん）
+        </td>
+        <td align="center">
+            最高点（ふつう）
+        </td>
+        <td align="center">
+            最高点（むずかしい）
+        </td>
+        <td align="center">
+            登録日
+        </td>
+        <td align="center">
+            最終ログイン
+        </td>
+    </tr>
+    <tr>
+        <td align="center">
+            {{ delete_user.id }}
+        </td>
+        <td align="center">
+            {{ delete_user.username }}
+        </td>
+        <td align="center">
+            {{ delete_user.email }}
+        </td>
+        <td align="center">
+            {{ delete_user.easy_point }}
+        </td>
+        <td align="center">
+            {{ delete_user.normal_point }}
+        </td>
+        <td align="center">
+            {{ delete_user.hard_point }}
+        </td>
+        <td align="center">
+            {{ delete_user.date_joined }}
+        </td>
+        <td align="center">
+            {{ delete_user.last_login }}
+        </td>
+    </tr>
+</table>
+<br>
+<p></p>
+<p><a href="{% url 'user_delete_form' %}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">ユーザーの削除</a></p>
+{% endblock content %}

@@ -1,0 +1,36 @@
+- model: question.Question_hard
+  pk: 1
+  fields:
+    question: "１００＋２００＝３００"
+    answer: true
+    comment: "正解は〇"
+- model: question.Question_hard
+  pk: 2
+  fields:
+    question: "５００－３００＝３００"
+    answer: false
+    comment: "正解は×"
+- model: question.Question_hard
+  pk: 3
+  fields:
+    question: "２００×４００＝６００"
+    answer: false
+    comment: "正解は×"
+- model: question.Question_hard
+  pk: 4
+  fields:
+    question: "９００÷３００＝３００"
+    answer: true
+    comment: "正解は〇"
+- model: question.Question_hard
+  pk: 5
+  fields:
+    question: "４００+３００＝７００"
+    answer: true
+    comment: "正解は〇"
+- model: question.Question_hard
+  pk: 6
+  fields:
+    question: "８００－２００＝５００"
+    answer: false
+    comment: "正解は×"
