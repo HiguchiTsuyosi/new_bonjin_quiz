@@ -42,6 +42,9 @@
                         {{ user.id }}
                     </td>
                 </tr>
+                {% ifequal user.easy_point user.forloop.counter.easy_point %}
+                {{ forloop|add:"1" }}
+                {% endifequal %}
                 {% endfor %}
             </table>
         </div>
