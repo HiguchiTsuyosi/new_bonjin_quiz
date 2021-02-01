@@ -1,1 +1,1 @@
-web: gunicorn new_bojin_quiz.wsgi --log-fig - 
+web: gunicorn new_bonjin_quiz.wsgi --log-file - 
