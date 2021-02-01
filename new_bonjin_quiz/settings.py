@@ -83,10 +83,10 @@ WSGI_APPLICATION = 'new_bonjin_quiz.wsgi.application'
 DATABASES = {
     'default':{
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd51c9hvhsva76q',
-        'USER': 'cgezytkrxgltnh',
-        'PASSWORD': '229d16b7cd931abb98cf2ebaf8d511bc45a7217501f4686925585682c1bc948b',
-        'HOST': 'ec2-34-200-106-49.compute-1.amazonaws.com',
+        'NAME': 'd8ofl23if3a7k5',
+        'USER': 'vjxkdmamwtuwje',
+        'PASSWORD': 'd13dc487e75c6c89fe6c354e110b1095dcbf83ad825417f1e88e842aa10193ef',
+        'HOST': 'ec2-23-23-88-216.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
