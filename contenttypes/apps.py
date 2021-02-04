@@ -12,7 +12,7 @@ from .management import (
 
 
 class ContentTypesConfig(AppConfig):
-    name = 'django.contrib.contenttypes'
+    name = 'contenttypes'
     verbose_name = _("Content Types")
 
     def ready(self):

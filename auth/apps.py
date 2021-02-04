@@ -11,7 +11,7 @@ from .signals import user_logged_in
 
 
 class AuthConfig(AppConfig):
-    name = 'django.contrib.auth'
+    name = 'auth'
     verbose_name = _("Authentication and Authorization")
 
     def ready(self):
